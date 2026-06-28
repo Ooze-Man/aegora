@@ -1,4 +1,4 @@
-import { Elysia, t } from 'elysia'
+import { Aegora, t } from 'aegora'
 
 if ('Bun' in globalThis) {
 	throw new Error('❌ Use Node.js to run this test!')
@@ -9,7 +9,7 @@ setTimeout(() => {
 	process.exit(1)
 }, 5000)
 
-const app = new Elysia().get('/', () => 'Node.js', {
+const app = new Aegora().get('/', () => 'Node.js', {
 	response: t.String()
 })
 
