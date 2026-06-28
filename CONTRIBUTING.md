@@ -1,48 +1,134 @@
-# Welcome to Elysia contributing guide
+# Contributing to Aegora
 
-Thank you for investing your time in contributing to Elysia! Any contribution you make will be amazing :sparkles:.
+Thank you for considering a contribution to Aegora.
 
-Read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
+Aegora is a community-led TypeScript framework and contributor community. We want this project to be technically strong, respectful, and useful for both experienced maintainers and first-time open-source contributors.
 
-In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+## Community Expectations
 
-## Setup Local Development Environment
+Contributors should expect:
 
-Elysia test cases are using [bun](https://bun.sh). Make sure you have the [latest version of bun](https://github.com/oven-sh/bun/releases) installed in your system.
+- Respectful review, even when a change is declined.
+- Clear reasoning when issues or pull requests are closed.
+- Help finding a good first contribution.
+- No public shaming for beginner mistakes.
+- A path from contributor to reviewer to maintainer.
 
-To run Elysia locally:
+Maintainers should expect:
 
-1. Clone this repository
-2. run `bun install` in project's root
-3. Run development with `bun run dev`
+- Good-faith participation.
+- Reproduction cases or tests when possible.
+- Patience around volunteer time.
+- Technical disagreement without personal attacks.
 
-### Unit Testing
+Please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) before participating.
 
-All of the test files are located inside the [`test/`](test/) directory. Unit testing are powered by [bun's test](https://github.com/oven-sh/bun/tree/main/packages/bun-internal-test).
+## Setup
 
-- `bun test` to run all the test inside the [`test/`](test/) directory
-- `bun test test/<test-file>.ts` to run a specific test
+Aegora uses [Bun](https://bun.sh) for development and testing.
+
+```bash
+bun install
+bun run build
+bun run test
+```
+
+Useful commands:
+
+```bash
+bun test
+bun test test/<test-file>.ts
+bun run test:types
+bun run deadcode
+```
+
+## Contribution Types
+
+You can contribute through:
+
+- Bug reports
+- Reproduction cases
+- Documentation improvements
+- Examples and recipes
+- Tests
+- Type improvements
+- Core framework changes
+- Plugin work
+- Issue triage and mentorship
+
+Small docs fixes are welcome. Larger technical changes should usually start with an issue or RFC-style discussion.
 
 ## Pull Request Guidelines
 
-Recommended to use `main` branch as a base to work on.
+Before opening a PR:
 
-#### General Recommendation
-- Please kindly verify that you have run test suite before request a review from maintainers with `bun run test`
-- We do not condone the usage of any form of plagiarism or copying code without proper attribution.
-- We do not tolerate disrespectful or inappropriate behavior within the community.
-- AI generated pull request without human interaction, review and supervision may result in close without further notice or ban from future contribution to Elysia.
+1. Keep the change focused.
+2. Add or update tests when behavior changes.
+3. Update documentation when APIs or developer-facing behavior changes.
+4. Run the relevant test command locally when possible.
+5. Explain the problem, solution, tradeoffs, and follow-up work.
 
-#### Adding New Features
-- Provide a reason why you would like to add this feature. Ideally before creating a PR, create a new issue with, explain the reason, tag as `feature request` and tag maintainer eg. "saltyaom"
-- It's recommended to add test cases to cover core feature of the feature you intent to add
+A good PR description includes:
 
-#### Fixing Bug
-- When opening an pull request fixing existing issue, please kindly include the issue link or id in the description
-- Provide a detailed description of the bug in the PR. Live demo preferred.
-- Add appropriate test coverage if applicable.
-- It's OK to have multiple small commits as you work on the PR. GitHub can automatically squash them before merging.
+```md
+## What changed?
 
-## Thanks :purple_heart:
+## Why?
 
-Thanks for all your contributions and efforts towards improving Elysia. We thank you for being part of our community :sparkles:!
+## How was this tested?
+
+## Notes for reviewers
+```
+
+## Mentored Issues
+
+Issues labeled `mentored` are intended for contributors who want extra context or guidance.
+
+A mentored issue should include:
+
+- Problem statement
+- Relevant files
+- Expected behavior
+- Acceptance criteria
+- Suggested tests
+- Optional stretch goal
+
+To request help, comment:
+
+```txt
+I'd like mentorship on this.
+```
+
+See [MENTORSHIP.md](./MENTORSHIP.md).
+
+## Review Culture
+
+Reviews should be direct, kind, and specific.
+
+Prefer:
+
+```txt
+Could we move this validation closer to the parser so both adapters share the same behavior?
+```
+
+Avoid:
+
+```txt
+This is wrong.
+```
+
+When rejecting a change, explain why and, when possible, suggest a path forward.
+
+## AI-Assisted Contributions
+
+AI tools are allowed when used responsibly.
+
+Contributors are responsible for understanding, testing, and owning any code they submit. Low-effort generated PRs that are not reviewed by the contributor may be closed.
+
+## Attribution
+
+This project is a fork of ElysiaJS and preserves attribution in [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md). Do not copy code from other projects unless the license allows it and attribution is preserved.
+
+## Thanks
+
+Thank you for helping make Aegora a better framework and a better place to contribute.
