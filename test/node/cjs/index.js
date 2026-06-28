@@ -7,9 +7,9 @@ setTimeout(() => {
 	process.exit(1)
 }, 5000)
 
-const { Elysia, t } = require('elysia')
+const { Aegora, t } = require('aegora')
 
-const app = new Elysia().get('/', () => 'Node.js', {
+const app = new Aegora().get('/', () => 'Node.js', {
 	response: t.String()
 })
 
