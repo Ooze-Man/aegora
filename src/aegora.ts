@@ -1,15 +1,15 @@
-import Elysia from './index'
+import BaseApp from './index'
 
 export * from './index'
 
 /**
  * Primary Aegora application class.
  */
-export const Aegora = Elysia
+export const Aegora = BaseApp
 
 /**
  * @deprecated Use `Aegora` instead.
  */
-export { Elysia }
+export { BaseApp as Elysia }
 
 export default Aegora
