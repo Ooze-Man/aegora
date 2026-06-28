@@ -1,6 +1,6 @@
 {
     "type": "commonjs",
     "dependencies": {
-        "elysia": "../../.."
+        "aegora": "../../.."
     }
 }
