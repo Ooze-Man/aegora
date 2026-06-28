@@ -27,9 +27,9 @@ See [NOTICE.md](./NOTICE.md) for attribution details.
 ## Getting Started
 
 ```ts
-import { Elysia, t } from 'aegora'
+import { Aegora, t } from 'aegora'
 
-const app = new Elysia()
+const app = new Aegora()
   .get('/hello/:name', ({ params }) => ({
     message: `Hello ${params.name}`
   }), {
@@ -44,7 +44,7 @@ const app = new Elysia()
 app.listen(3000)
 ```
 
-> API names are intentionally conservative during the foundation phase. The project may later introduce Aegora-native aliases while preserving migration clarity.
+`Aegora` is the primary public application class. `Elysia` remains available as a deprecated compatibility alias while migration work continues.
 
 ## Why Aegora?
 
