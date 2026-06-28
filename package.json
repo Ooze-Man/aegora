@@ -1,11 +1,9 @@
 {
-	"name": "elysia",
-	"description": "Ergonomic Framework for Human",
-	"version": "1.4.29",
+	"name": "aegora",
+	"description": "Community-led TypeScript framework for reliable Bun APIs",
+	"version": "0.1.0",
 	"author": {
-		"name": "saltyAom",
-		"url": "https://github.com/SaltyAom",
-		"email": "saltyaom@gmail.com"
+		"name": "Aegora contributors"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -165,15 +163,18 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/elysiajs/elysia"
+		"url": "https://github.com/Ooze-Man/aegora"
 	},
-	"bugs": "https://github.com/elysiajs/elysia/issues",
-	"homepage": "https://github.com/elysiajs/elysia",
+	"bugs": "https://github.com/Ooze-Man/aegora/issues",
+	"homepage": "https://github.com/Ooze-Man/aegora",
 	"keywords": [
 		"bun",
 		"http",
 		"web",
-		"server"
+		"server",
+		"typescript",
+		"openapi",
+		"framework"
 	],
 	"license": "MIT",
 	"scripts": {
