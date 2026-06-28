@@ -1,36 +1,91 @@
-<p align=center>
- <img src=https://github.com/user-attachments/assets/8168188b-ffaf-444f-8d09-c516ce140824 alt="Elysia Banner" />
+<p align="center">
+  <strong>Aegora</strong>
 </p>
 
-<h3 align=center>Elysia</h3>
-<p align=center>Ergonomic Framework for Humans</p>
+<h1 align="center">Fast APIs. Clear contracts. Welcoming contribution.</h1>
 
-<p align=center>
-    <a href=https://elysiajs.com>Documentation</a> | <a href=https://discord.gg/eaFJ2KDJck>Discord</a> | <a href=https://github.com/sponsors/SaltyAom>Sponsors</a>
+<p align="center">
+  Aegora is a community-led TypeScript framework for building reliable Bun APIs with strong types, first-class API contracts, production-ready tooling, and a contributor culture built around mentorship.
 </p>
 
-<br>
+<p align="center">
+  <a href="#getting-started">Getting Started</a> ·
+  <a href="#why-aegora">Why Aegora?</a> ·
+  <a href="./ROADMAP.md">Roadmap</a> ·
+  <a href="./CONTRIBUTING.md">Contributing</a> ·
+  <a href="./GOVERNANCE.md">Governance</a>
+</p>
 
-<p align=center>TypeScript with End-to-End Type Safety, type integrity, and exceptional developer experience. Supercharged by Bun.</p>
+---
 
-<br>
+## Status
 
-![Elysia chan cover | bun creeate elysia app](https://github.com/user-attachments/assets/a649731a-8cba-4ca2-8424-6656cbf84956)
+Aegora is currently being established as a fork of ElysiaJS. The first phase focuses on project identity, attribution, contribution flow, governance, and a clear technical roadmap before deeper framework changes are made.
 
-<!---
-```bash
-bun create elysia app
+See [NOTICE.md](./NOTICE.md) for attribution details.
+
+## Getting Started
+
+```ts
+import { Elysia, t } from 'aegora'
+
+const app = new Elysia()
+  .get('/hello/:name', ({ params }) => ({
+    message: `Hello ${params.name}`
+  }), {
+    params: t.Object({
+      name: t.String()
+    }),
+    response: t.Object({
+      message: t.String()
+    })
+  })
+
+app.listen(3000)
 ```
 
-![Elysia feature sheet including 18x faster than Express based on Techempower benchmark, Frontend RPC Connector, Advance TypeScript type, unified type single source of truth of type TypeScript runtime and documentation all at once, Made of Productivity focus on developer experience, powered by Bun, WinterCG Compliance, Fully type safe GraphQL (same author with GraphQL Mobius), documentation in one line, End-to-end type safety move fast and break nothing like tRPC, strong ecosystem most popular Bun native Web Framework](https://github.com/elysiajs/elysia/assets/35027979/d4b184ca-a622-434d-bb06-06c3110726af)
+> API names are intentionally conservative during the foundation phase. The project may later introduce Aegora-native aliases while preserving migration clarity.
 
-## Documentation
-The documentation is available on [elysiajs.com](https://elysiajs.com).
+## Why Aegora?
+
+Aegora is built around three commitments:
+
+1. **Reliable APIs** — strong types, clear runtime behavior, and production-minded tooling.
+2. **Clear contracts** — first-class schema, documentation, and OpenAPI-oriented workflows.
+3. **Welcoming contribution** — mentored issues, respectful reviews, transparent governance, and a path from first PR to maintainer.
+
+## Initial Priorities
+
+- Establish safe fork attribution and package identity.
+- Build a contributor path that is clear, respectful, and beginner-friendly.
+- Improve documentation around plugin authoring, testing, and production usage.
+- Add structured OpenAPI 3.1 export as a flagship feature.
+- Create official examples for common backend patterns.
+
+## Community Promise
+
+Aegora is not only a framework. It is a place to learn, contribute, and grow.
+
+Contributors should expect respectful responses, clear reasons when ideas are declined, practical review feedback, and beginner-friendly issues with enough context to make progress.
+
+Maintainers should expect good-faith participation, tested changes when possible, patience around volunteer time, and technical disagreement without personal attacks.
+
+## Development
+
+```bash
+bun install
+bun run test
+bun run build
+```
 
 ## Contributing
-See [Contributing Guide](CONTRIBUTING.md) and please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Discord
-Come join the [Discord community channel~](https://discord.gg/eaFJ2KDJck)
+Start with [CONTRIBUTING.md](./CONTRIBUTING.md) and [MENTORSHIP.md](./MENTORSHIP.md).
 
---->
+For larger changes, open an issue or RFC-style discussion first so the community can align on design before implementation.
+
+## License
+
+Aegora is released under the MIT License.
+
+Portions of this project are derived from ElysiaJS and retain the original copyright and license notices. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md).
