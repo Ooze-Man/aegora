@@ -5,12 +5,17 @@
 	"author": {
 		"name": "Aegora contributors"
 	},
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"main": "./dist/aegora.js",
+	"module": "./dist/aegora.mjs",
+	"types": "./dist/aegora.d.ts",
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
+			"types": "./dist/aegora.d.ts",
+			"import": "./dist/aegora.mjs",
+			"require": "./dist/aegora.js"
+		},
+		"./elysia": {
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
