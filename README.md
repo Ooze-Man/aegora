@@ -1,11 +1,11 @@
 <p align="center">
-  <strong>Aegora</strong>
+  <img src="./docs/assets/aegora-banner.png" alt="Aegora — TypeScript/Bun framework" />
 </p>
 
 <h1 align="center">Fast APIs. Clear contracts. Welcoming contribution.</h1>
 
 <p align="center">
-  Aegora is a community-led TypeScript framework for building reliable Bun APIs with strong types, first-class API contracts, production-ready tooling, and a contributor culture built around mentorship.
+  Aegora is a community-led TypeScript/Bun framework for building reliable APIs with strong types, clear contracts, and a contributor culture built around mentorship.
 </p>
 
 <p align="center">
