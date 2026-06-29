@@ -18,6 +18,8 @@ const extensions = new Set([
 ])
 
 const replacements = [
+	["'elysia/", "'aegora/"],
+	['"elysia/', '"aegora/'],
 	['ElysiaCustomStatusResponse', 'AegoraCustomStatusResponse'],
 	['ElysiaStatus', 'AegoraStatus'],
 	['ElysiaErrors', 'AegoraErrors'],
@@ -43,6 +45,7 @@ const replacements = [
 	['"elysia"', '"aegora"'],
 	['from elysia', 'from aegora'],
 	['using elysia', 'using aegora'],
+	['elysia-', 'aegora-'],
 	['Elysia.fetch', 'Aegora.fetch']
 ]
 
