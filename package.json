@@ -41,6 +41,7 @@
 		"test:cf": "npm install --prefix test/cloudflare && cd test/cloudflare && bun run cf-typegen && bun run test",
 		"dev": "bun run --watch example/a.ts",
 		"build": "rm -rf dist && bun build.ts",
+		"rename:internals": "bun scripts/rename-internals.mjs",
 		"deadcode": "knip",
 		"release": "bun run build && bun run test && bun publish"
 	},
