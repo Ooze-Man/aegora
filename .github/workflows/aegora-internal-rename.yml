@@ -1,0 +1,39 @@
+name: Aegora Internal Rename
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run Aegora internal rename codemod
+        run: bun scripts/rename-internals.mjs
+
+      - name: Show diff summary
+        run: git diff --stat
+
+      - name: Commit rename changes
+        run: |
+          if git diff --quiet; then
+            echo "No rename changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src test example docs/migration README.md
+          git commit -m "refactor: rename internal core API to Aegora"
+          git push
