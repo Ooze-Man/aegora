@@ -1,9 +1,9 @@
-import { Elysia, t } from 'elysia'
-import { CloudflareAdapter } from 'elysia/adapter/cloudflare-worker'
+import { Aegora, t } from 'aegora'
+import { CloudflareAdapter } from 'aegora/adapter/cloudflare-worker'
 
-const sub = new Elysia().get('/test', () => 'hello')
+const sub = new Aegora().get('/test', () => 'hello')
 
-export default new Elysia({ adapter: CloudflareAdapter })
-	.get('/', () => 'Elysia on Cloudflare Worker!')
+export default new Aegora({ adapter: CloudflareAdapter })
+	.get('/', () => 'Aegora on Cloudflare Worker!')
 	.use(sub)
 	.compile()
