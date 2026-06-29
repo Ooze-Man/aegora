@@ -15,11 +15,6 @@
 			"import": "./dist/aegora.mjs",
 			"require": "./dist/aegora.js"
 		},
-		"./elysia": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
-		},
 		"./ws": {
 			"types": "./dist/ws/index.d.ts",
 			"import": "./dist/ws/index.mjs",
