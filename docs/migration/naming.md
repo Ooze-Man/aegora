@@ -8,16 +8,12 @@ import { Aegora, t } from 'aegora'
 const app = new Aegora()
 ```
 
-## Compatibility
+## Public API
 
-`Elysia` remains available as a deprecated compatibility alias during the early fork phase.
+New documentation, examples, tests, and packages should use Aegora naming.
 
-```ts
-import { Elysia } from 'aegora'
-```
-
-New documentation and examples should use `Aegora`.
+Inherited names should remain only where they are required for attribution, license history, or an unfinished internal migration task.
 
 ## Next Steps
 
-The public entrypoint has been renamed first so new users can adopt the Aegora API immediately. Internal type names and compatibility exports will be migrated in later changes when they can be changed safely with tests and migration notes.
+The public entrypoint now exposes Aegora-first names. Internal type names and implementation details should continue moving to Aegora naming in focused changes with test coverage.
