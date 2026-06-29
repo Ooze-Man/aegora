@@ -18,12 +18,6 @@
 
 ---
 
-## Status
-
-Aegora is currently being established as a fork of ElysiaJS. The first phase focuses on project identity, attribution, contribution flow, governance, and a clear technical roadmap before deeper framework changes are made.
-
-See [NOTICE.md](./NOTICE.md) for attribution details.
-
 ## Getting Started
 
 ```ts
@@ -44,8 +38,6 @@ const app = new Aegora()
 app.listen(3000)
 ```
 
-`Aegora` is the primary public application class. `Elysia` remains available as a deprecated compatibility alias while migration work continues.
-
 ## Why Aegora?
 
 Aegora is built around three commitments:
@@ -56,7 +48,7 @@ Aegora is built around three commitments:
 
 ## Initial Priorities
 
-- Establish safe fork attribution and package identity.
+- Establish safe attribution and package identity.
 - Build a contributor path that is clear, respectful, and beginner-friendly.
 - Improve documentation around plugin authoring, testing, and production usage.
 - Add structured OpenAPI 3.1 export as a flagship feature.
@@ -86,6 +78,4 @@ For larger changes, open an issue or RFC-style discussion first so the community
 
 ## License
 
-Aegora is released under the MIT License.
-
-Portions of this project are derived from ElysiaJS and retain the original copyright and license notices. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md).
+Aegora is released under the MIT License. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md).
