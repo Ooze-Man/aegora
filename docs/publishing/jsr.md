@@ -1,68 +1,46 @@
 # JSR Publishing
 
-Aegora should prefer JSR as the primary registry once the public API and internal naming migration are stable.
+Aegora uses JSR package name:
+
+```txt
+@aegora/aegora
+```
+
+JSR is the preferred primary registry for Aegora once the public API and internal naming migration are stable.
 
 ## Why JSR
 
 JSR is a good fit for Aegora because it is TypeScript-first, supports publishing TypeScript source, and can be consumed from Deno, Node.js, Bun, and other tools.
 
-## Package Name
+## Package Config
 
-JSR packages are scoped. Before adding the final `jsr.json`, choose the exact package name that already exists on JSR, for example:
+The root `jsr.json` publishes TypeScript source directly from `src/`.
 
-```txt
-@aegora/core
-@aegora/aegora
-@ooze-man/aegora
-```
-
-Do not commit a final `jsr.json` until the package name is confirmed.
-
-## Proposed `jsr.json`
+The default entrypoint is:
 
 ```json
 {
-  "name": "@scope/aegora",
-  "version": "0.1.0",
-  "exports": {
-    ".": "./src/aegora.ts",
-    "./adapter/cloudflare-worker": "./src/adapter/cloudflare-worker/index.ts",
-    "./adapter/bun": "./src/adapter/bun/index.ts",
-    "./adapter/web-standard": "./src/adapter/web-standard/index.ts",
-    "./type-system": "./src/type-system/index.ts",
-    "./error": "./src/error.ts",
-    "./cookies": "./src/cookies.ts",
-    "./context": "./src/context.ts"
-  },
-  "publish": {
-    "include": [
-      "LICENSE",
-      "NOTICE.md",
-      "README.md",
-      "src/**/*.ts"
-    ],
-    "exclude": [
-      "src/**/*.test.ts",
-      "test/**",
-      "example/**"
-    ]
-  }
+  ".": "./src/aegora.ts"
 }
 ```
 
+Adapter and utility subpaths are exported explicitly so users can import them without depending on private source paths.
+
 ## Dry Run
 
-After the exact package name is confirmed and `jsr.json` is committed:
+Before publishing, run:
 
 ```bash
 npx jsr publish --dry-run
 ```
 
+This performs JSR's publishing checks without uploading a real package version.
+
 ## GitHub Actions Publishing
 
 After the JSR package is linked to this GitHub repository in JSR package settings, Aegora can publish without storing a token by using GitHub Actions OIDC.
 
-Recommended first workflow behavior:
+Recommended workflow behavior:
 
 - Run on Git tags only, not every push to `main`.
 - Require `bun run test` and `bun run build` to pass first.
@@ -72,6 +50,12 @@ Recommended first workflow behavior:
 
 - Finish the Aegora public/internal naming migration.
 - Ensure public examples use `Aegora`, not inherited names.
-- Decide whether the root package is `@aegora/core`, `@aegora/aegora`, or the JSR package that has already been created.
 - Run `npx jsr publish --dry-run` locally.
 - Keep `LICENSE` and `NOTICE.md` in the published package.
+
+## First Publish Checklist
+
+1. Link `@aegora/aegora` to `Ooze-Man/aegora` in JSR package settings.
+2. Confirm `jsr.json` version is correct.
+3. Run the dry run locally.
+4. Create a release tag only after tests and dry run pass.
