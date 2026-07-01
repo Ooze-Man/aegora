@@ -187,8 +187,10 @@
 		"dev": "bun run --watch example/a.ts",
 		"build": "rm -rf dist && bun build.ts",
 		"rename:internals": "bun scripts/rename-internals.mjs",
+		"publish:jsr": "npx jsr publish",
+		"publish:jsr:dry-run": "npx jsr publish --dry-run",
 		"deadcode": "knip",
-		"release": "bun run build && bun run test && bun publish"
+		"release": "bun run test && bun run publish:jsr"
 	},
 	"dependencies": {
 		"cookie": "^1.1.1",
