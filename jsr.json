@@ -1,0 +1,49 @@
+{
+	"name": "@aegora/aegora",
+	"version": "0.1.0",
+	"exports": {
+		".": "./src/aegora.ts",
+		"./ws": "./src/ws/index.ts",
+		"./ws/types": "./src/ws/types.ts",
+		"./ws/bun": "./src/ws/bun.ts",
+		"./compose": "./src/compose.ts",
+		"./context": "./src/context.ts",
+		"./cookies": "./src/cookies.ts",
+		"./error": "./src/error.ts",
+		"./schema": "./src/schema.ts",
+		"./sucrose": "./src/sucrose.ts",
+		"./trace": "./src/trace.ts",
+		"./type-system": "./src/type-system/index.ts",
+		"./type-system/format": "./src/type-system/format.ts",
+		"./type-system/utils": "./src/type-system/utils.ts",
+		"./type-system/types": "./src/type-system/types.ts",
+		"./types": "./src/types.ts",
+		"./utils": "./src/utils.ts",
+		"./parse-query": "./src/parse-query.ts",
+		"./adapter": "./src/adapter/index.ts",
+		"./adapter/utils": "./src/adapter/utils.ts",
+		"./adapter/bun": "./src/adapter/bun/index.ts",
+		"./adapter/bun/handler": "./src/adapter/bun/handler.ts",
+		"./adapter/bun/compose": "./src/adapter/bun/compose.ts",
+		"./adapter/cloudflare-worker": "./src/adapter/cloudflare-worker/index.ts",
+		"./adapter/web-standard": "./src/adapter/web-standard/index.ts",
+		"./adapter/web-standard/handler": "./src/adapter/web-standard/handler.ts",
+		"./universal": "./src/universal/index.ts",
+		"./universal/server": "./src/universal/server.ts",
+		"./universal/env": "./src/universal/env.ts",
+		"./universal/file": "./src/universal/file.ts"
+	},
+	"publish": {
+		"include": [
+			"LICENSE",
+			"NOTICE.md",
+			"README.md",
+			"src/**/*.ts"
+		],
+		"exclude": [
+			"src/**/*.test.ts",
+			"test/**",
+			"example/**"
+		]
+	}
+}

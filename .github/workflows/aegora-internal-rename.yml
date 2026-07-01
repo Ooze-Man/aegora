@@ -1,13 +1,13 @@
-name: Aegora Internal Rename
+name: Aegora Internal Rename Check
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  rename:
+  rename-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,15 +25,5 @@ jobs:
       - name: Show diff summary
         run: git diff --stat
 
-      - name: Commit rename changes
-        run: |
-          if git diff --quiet; then
-            echo "No rename changes to commit."
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src test example docs/migration README.md
-          git commit -m "refactor: rename internal core API to Aegora"
-          git push
+      - name: Fail if codemod still changes files
+        run: git diff --exit-code
