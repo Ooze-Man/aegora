@@ -12,6 +12,8 @@ Goal: make the project safe, understandable, and contributor-ready.
 - Improve contribution guidance
 - Create issue and pull request templates
 - Define initial release and stability expectations
+- Complete the public and internal Aegora naming migration
+- Prepare JSR publishing configuration and release guidance
 
 ## Phase 1: Contracts and Documentation
 
@@ -22,6 +24,7 @@ Goal: make Aegora excellent for documented, reliable APIs.
 - Add examples for schema, validation, and response contracts
 - Create a plugin authoring guide
 - Add production recipes for common backend patterns
+- Document JSR-first installation and publishing workflows
 
 ## Phase 2: Developer Experience
 
@@ -42,12 +45,13 @@ Goal: grow a reliable plugin and contributor ecosystem.
 - Create package naming conventions
 - Publish mentored plugin issues
 - Document long-term support expectations
+- Establish JSR package publishing policy for official Aegora packages
 
 ## Non-Goals for the Foundation Phase
 
 - Rewriting framework internals immediately
 - Breaking public APIs without migration guidance
-- Removing Elysia attribution
+- Removing required upstream attribution
 - Positioning Aegora as a hostile fork
 
 ## Guiding Principles
